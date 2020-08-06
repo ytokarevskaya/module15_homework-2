@@ -1,0 +1,30 @@
+.btn {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+
+    display: flex;
+    margin: 5px 10px;
+    padding: 10px 15px;
+    border-radius: 2px;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: white;
+    background: gray;
+    transition: 0.3s;
+}
+
+
+.btn_text {
+    margin-right: 10px;
+}
+
+.btn_icon {
+    width: 15px;
+    height: 15px;
+    font-size: 15px;
+}
