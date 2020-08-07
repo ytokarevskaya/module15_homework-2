@@ -1,24 +1,15 @@
 const wsUri = "wss://echo.websocket.org/";
 //Ищем кнопки
-const output = document.getElementById("output");
 const btnOpen = document.querySelector('.j-btn-open');
 const btnSend = document.querySelector('.j-btn-send');
 
 //задаем вебсокет
 let websocket;
 
-function writeToScreen(message) {
-    let pre = document.createElement("p");
-    pre.style.wordWrap = "break-word";
-    pre.innerHTML = message;
-    output.appendChild(pre);
-}
-
+// Открываем соединение, сообщение не выводим, открытое соединеие видно в Network
 btnOpen.addEventListener('click', () => {
     websocket = new WebSocket(wsUri);
-    websocket.onopen = function (evt) {
-        writeToScreen("CONNECTED");
-    };
+
     websocket.onclose = function (evt) {
         writeToScreen("DISCONNECTED");
     };
@@ -34,8 +25,17 @@ btnOpen.addEventListener('click', () => {
     };
 });
 
+//обьявляем функцию для вывода сообщений
+
+function writeToScreen(message) {
+    let pre = document.getElementById("vvod");
+    pre.innerHTML = message;
+    document.getElementById('output').innerHTML = message;
+}
+
+
 btnSend.addEventListener('click', () => {
-    const message = 'Test message';
-    writeToScreen("SENT: " + message);
+    const message = pre;
+    writeToScreen(message);
     websocket.send(message);
 });
