@@ -17,9 +17,11 @@
 }
 
 .OknoVyvoda {
-    padding: 20px 200px;
+    display: block;
+    width: 200px;
+    padding: 20px 100px;
     border: solid;
-    border-color: #4CAF50; 
+    border-color: #4CAF50;
 }
 
 .KnopkaSoedineniya {
